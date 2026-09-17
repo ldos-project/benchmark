@@ -130,21 +130,15 @@
       (function() {
         
         async function init() {
-          const dataPaths = [
-            'lmbench/data.js',
-            'iperf3/data.js',
-            'nginx/data.js',
-            'sysbench/data.js',
-            'redis/data.js',
-            'fio/data.js',
-            'sqlite/data.js',
-            'hackbench/data.js',
-            'schbench/data.js',
-            'memcached/data.js',
-            // Add more paths as needed
-          ];
+          // Each data set is a directory under x86-64/ on this branch, holding a data.js written by CI.
+          const res = await fetch('https://api.github.com/repos/ldos-project/benchmark/contents/x86-64?ref=gh-pages');
+          const dataPaths = (await res.json())
+            .filter(entry => entry.type === 'dir')
+            .map(entry => `x86-64/${entry.name}/data.js`);
 
-          const allData = await Promise.all(dataPaths.map(path => fetch(path).then(res => res.text())));
+          const allData = await Promise.all(
+            dataPaths.map(path => fetch(path).then(res => res.ok ? res.text() : null).catch(() => null))
+          );
 
           // Parse and merge all data into a single object
           const mergedData = {
@@ -154,23 +148,29 @@
           };
 
           allData.forEach((data, index) => {
-            const scriptContent = data.replace('window.BENCHMARK_DATA = ', '');
-            const parsedData = JSON.parse(scriptContent);
-            mergedData.lastUpdate = Math.max(mergedData.lastUpdate, parsedData.lastUpdate);
-            mergedData.repoUrl = parsedData.repoUrl;
-            console.log(parsedData);
-
             // Get the base name from the path
-            const baseName = dataPaths[index].split('/')[0];
+            const baseName = dataPaths[index].split('/')[1];
+            if (data === null) {
+              return; // directory without a data.js — not a data set
+            }
+            try {
+              const scriptContent = data.replace('window.BENCHMARK_DATA = ', '');
+              const parsedData = JSON.parse(scriptContent);
+              mergedData.lastUpdate = Math.max(mergedData.lastUpdate, parsedData.lastUpdate);
+              mergedData.repoUrl = parsedData.repoUrl;
+              console.log(parsedData);
 
-            const dateSets = Object.keys(parsedData.entries).map(name => ({
-              name,
-              dataSet: collectBenchesPerTestCase(parsedData.entries[name]),
-            }));
+              const dateSets = Object.keys(parsedData.entries).map(name => ({
+                name,
+                dataSet: collectBenchesPerTestCase(parsedData.entries[name]),
+              }));
 
-            // Normalize the data
-            const normalizedData = getNormalizedData(dateSets);
-            mergedData.normalizedDataSets.push({ name: baseName, normalizedData });
+              // Normalize the data
+              const normalizedData = getNormalizedData(dateSets);
+              mergedData.normalizedDataSets.push({ name: baseName, normalizedData });
+            } catch (e) {
+              console.warn(`Skipping data set ${baseName}:`, e);
+            }
           });
 
           // Render header
@@ -357,7 +357,7 @@
             const asterinasValues = Array.from(dataSet.normalizedData.values());
 
             const title = `<a href="${new URL(
-                dataSet.name,
+                `x86-64/${dataSet.name}/`,
                 window.location.href
             )}" target="_blank">${dataSet.name}</a>: Normalized performance of Mariposa`;
             const description =
