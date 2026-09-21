@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1790019808380,
+  "lastUpdate": 1790019808771,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "mem_pagefault_lat": [
@@ -36,6 +36,46 @@ window.BENCHMARK_DATA = {
             "name": "Average page fault latency on Asterinas",
             "value": "0.1351",
             "unit": "µs",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20260919-165421"
+      }
+    ],
+    "mem_mmap_bw": [
+      {
+        "commit": {
+          "author": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "committer": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "id": "f770cea880ee31088966b1de784b499aecb89fa1",
+          "message": "Fix act dependency fetch",
+          "timestamp": "2026-09-19T16:44:21Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/f770cea880ee31088966b1de784b499aecb89fa1"
+        },
+        "date": 1790019808767,
+        "tool": "customBiggerIsBetter",
+        "title": "[Memory] The bandwidth of mmap",
+        "description": "bw_mmap",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average mmap bandwidth on Linux",
+            "value": "15180.43",
+            "unit": "MB/s",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average mmap bandwidth on Asterinas",
+            "value": "15208.84",
+            "unit": "MB/s",
             "extra": "aster_result"
           }
         ],
