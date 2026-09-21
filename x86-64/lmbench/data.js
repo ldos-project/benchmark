@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1790019802630,
+  "lastUpdate": 1790019803061,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "signal_install_lat": [
@@ -516,6 +516,46 @@ window.BENCHMARK_DATA = {
             "name": "Average select file latency on Asterinas",
             "value": "2.4784",
             "unit": "µs",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20260919-165421"
+      }
+    ],
+    "ramfs_create_delete_files_10k_ops": [
+      {
+        "commit": {
+          "author": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "committer": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "id": "f770cea880ee31088966b1de784b499aecb89fa1",
+          "message": "Fix act dependency fetch",
+          "timestamp": "2026-09-19T16:44:21Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/f770cea880ee31088966b1de784b499aecb89fa1"
+        },
+        "date": 1790019803059,
+        "tool": "customBiggerIsBetter",
+        "title": "[Ramfs] The throughput of creating/deleting small files (10KB)",
+        "description": "lat_fs -s 10K",
+        "display": true,
+        "benches": [
+          {
+            "name": "Number of created/deleted files on Linux",
+            "value": "1474",
+            "unit": "number",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Number of created/deleted files on Asterinas",
+            "value": "14955",
+            "unit": "number",
             "extra": "aster_result"
           }
         ],
