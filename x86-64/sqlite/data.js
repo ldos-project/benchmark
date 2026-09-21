@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1790019642143,
+  "lastUpdate": 1790019642507,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "ramfs_benchmarks_vacuum": [
@@ -315,6 +315,46 @@ window.BENCHMARK_DATA = {
           {
             "name": "The speed of refill-replace on Asterinas (Ramfs)",
             "value": "3.509",
+            "unit": "second",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20260919-165421"
+      }
+    ],
+    "ramfs_benchmarks_deletes_individual": [
+      {
+        "commit": {
+          "author": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "committer": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "id": "f770cea880ee31088966b1de784b499aecb89fa1",
+          "message": "Fix act dependency fetch",
+          "timestamp": "2026-09-19T16:44:21Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/f770cea880ee31088966b1de784b499aecb89fa1"
+        },
+        "date": 1790019642503,
+        "tool": "customSmallerIsBetter",
+        "title": "[Ramfs] The deletes-individual result of sqlite speedtest",
+        "description": "sqlite-speed-test: 50000 DELETEs of individual rows",
+        "display": false,
+        "benches": [
+          {
+            "name": "The speed of deletes-individual on Linux (Ramfs)",
+            "value": "1.992",
+            "unit": "second",
+            "extra": "linux_result"
+          },
+          {
+            "name": "The speed of deletes-individual on Asterinas (Ramfs)",
+            "value": "2.066",
             "unit": "second",
             "extra": "aster_result"
           }
