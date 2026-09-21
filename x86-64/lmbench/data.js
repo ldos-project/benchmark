@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1790019799274,
+  "lastUpdate": 1790019799721,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "unix_lat": [
@@ -755,6 +755,46 @@ window.BENCHMARK_DATA = {
           {
             "name": "Average file locking latency on Asterinas",
             "value": "0.5484",
+            "unit": "µs",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20260919-165421"
+      }
+    ],
+    "tcp_loopback_connect_lat": [
+      {
+        "commit": {
+          "author": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "committer": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "id": "f770cea880ee31088966b1de784b499aecb89fa1",
+          "message": "Fix act dependency fetch",
+          "timestamp": "2026-09-19T16:44:21Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/f770cea880ee31088966b1de784b499aecb89fa1"
+        },
+        "date": 1790019799718,
+        "tool": "customSmallerIsBetter",
+        "title": "[TCP sockets] The latency of connect (loopback)",
+        "description": "lat_connect",
+        "display": false,
+        "benches": [
+          {
+            "name": "Average TCP connection latency on Linux",
+            "value": "20.7020",
+            "unit": "µs",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average TCP connection latency on Asterinas",
+            "value": "5324.6944",
             "unit": "µs",
             "extra": "aster_result"
           }
