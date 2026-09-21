@@ -1,7 +1,47 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1790019793393,
+  "lastUpdate": 1790019793861,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
+    "vfs_open_lat": [
+      {
+        "commit": {
+          "author": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "committer": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "id": "f770cea880ee31088966b1de784b499aecb89fa1",
+          "message": "Fix act dependency fetch",
+          "timestamp": "2026-09-19T16:44:21Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/f770cea880ee31088966b1de784b499aecb89fa1"
+        },
+        "date": 1790019793858,
+        "tool": "customSmallerIsBetter",
+        "title": "[VFS] The cost of open+close",
+        "description": "lat_syscall open",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average open latency on Linux",
+            "value": "0.6817",
+            "unit": "µs",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average open latency on Asterinas",
+            "value": "0.7117",
+            "unit": "µs",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20260919-165421"
+      }
+    ],
     "vfs_read_lat": [
       {
         "commit": {
