@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1790235968877,
+  "lastUpdate": 1790320802504,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "http_file4KB_bw": [
@@ -2292,6 +2292,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20260924-050002"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "committer": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "id": "7fc6e655d8b631e457a59df1a8e95320c726a203",
+          "message": "Update cron comment",
+          "timestamp": "2026-09-24T00:44:09Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/7fc6e655d8b631e457a59df1a8e95320c726a203"
+        },
+        "date": 1790320802499,
+        "tool": "customBiggerIsBetter",
+        "title": "Nginx HTTP request performance with 20 concurrency and 10000 requests in total",
+        "description": "ab -n 10000 -c 20 http://localhost:8080/index.html",
+        "display": false,
+        "benches": [
+          {
+            "name": "Average HTTP Bandwidth over virtio-net between Host Linux and Guest Linux",
+            "value": "12990.70",
+            "unit": "Kbytes/sec",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average HTTP Bandwidth over virtio-net between Host Linux and Guest Asterinas",
+            "value": "4591.62",
+            "unit": "Kbytes/sec",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20260925-050002"
       }
     ],
     "http_req10k_conc1_bw": [
