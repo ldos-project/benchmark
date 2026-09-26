@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1790320832096,
+  "lastUpdate": 1790407935390,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "group8_smp1": [
@@ -420,6 +420,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20260925-050002"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "committer": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "id": "7fc6e655d8b631e457a59df1a8e95320c726a203",
+          "message": "Update cron comment",
+          "timestamp": "2026-09-24T00:44:09Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/7fc6e655d8b631e457a59df1a8e95320c726a203"
+        },
+        "date": 1790407935387,
+        "tool": "customSmallerIsBetter",
+        "title": "[Scheduler] Turnaround time of 8 groups using 1 CPU",
+        "description": "hackbench -g 8 -l 1000 -p -T",
+        "display": false,
+        "benches": [
+          {
+            "name": "Turnaround time of hackbench on Linux",
+            "value": "1.199",
+            "unit": "sec",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Turnaround time of hackbench on Asterinas",
+            "value": "1.423",
+            "unit": "sec",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20260926-050002"
       }
     ]
   }
