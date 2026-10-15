@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792049678552,
+  "lastUpdate": 1792049679065,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "ping_inline_100k_conc20_rps": [
@@ -4454,6 +4454,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261014-050002"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "committer": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "id": "29ebdd325dcf2c8afb6b5cf9d0eccf091c003c36",
+          "message": "Remove dead log message",
+          "timestamp": "2026-10-15T00:08:26Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/29ebdd325dcf2c8afb6b5cf9d0eccf091c003c36"
+        },
+        "date": 1792049679059,
+        "tool": "customBiggerIsBetter",
+        "title": "Redis SET performance (virtio-net, 20 concurrency, 100K requests)",
+        "description": "redis-benchmark -n 100000 -c 20 -t set",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average RPS of SET over virtio-net between Host Linux and Guest Linux",
+            "value": "95877.28",
+            "unit": "request per second",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average RPS of SET over virtio-net between Host Linux and Guest Asterinas",
+            "value": "127226.46",
+            "unit": "request per second",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261015-050002"
       }
     ],
     "ycsb": [
