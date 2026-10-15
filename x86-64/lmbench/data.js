@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792049707242,
+  "lastUpdate": 1792049707726,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "mem_pagefault_lat": [
@@ -53748,6 +53748,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261013-050002"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "committer": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "id": "29ebdd325dcf2c8afb6b5cf9d0eccf091c003c36",
+          "message": "Remove dead log message",
+          "timestamp": "2026-10-15T00:08:26Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/29ebdd325dcf2c8afb6b5cf9d0eccf091c003c36"
+        },
+        "date": 1792049707678,
+        "tool": "customBiggerIsBetter",
+        "title": "[Ext2] The throughput of creating/deleting small files (10KB)",
+        "description": "lat_fs -s 10K /ext2",
+        "display": false,
+        "benches": [
+          {
+            "name": "Number of created/deleted files on Linux",
+            "value": "93",
+            "unit": "number",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Number of created/deleted files on Asterinas",
+            "value": "67",
+            "unit": "number",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261015-050002"
       }
     ],
     "ext2_create_delete_files_0k_ops": [
