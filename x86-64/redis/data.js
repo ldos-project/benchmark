@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792135252735,
+  "lastUpdate": 1792135253244,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "ping_inline_100k_conc20_rps": [
@@ -2322,6 +2322,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261015-050002"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "committer": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "id": "53cc887a25bbba32e34ec2cd5e2564376e44e3d0",
+          "message": "Fix typo",
+          "timestamp": "2026-10-16T01:04:34Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/53cc887a25bbba32e34ec2cd5e2564376e44e3d0"
+        },
+        "date": 1792135253237,
+        "tool": "customBiggerIsBetter",
+        "title": "Redis PING MBULK performance (virtio-net, 20 concurrency, 100K requests)",
+        "description": "redis-benchmark -n 100000 -c 20 -t ping_mbulk",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average RPS of PING_MBULK over virtio-net between Host Linux and Guest Linux",
+            "value": "103626.95",
+            "unit": "request per second",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average RPS of PING_MBULK over virtio-net between Host Linux and Guest Asterinas",
+            "value": "132802.12",
+            "unit": "request per second",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261016-050004"
       }
     ],
     "get_100k_conc20_rps": [
