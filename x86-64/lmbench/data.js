@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792135264200,
+  "lastUpdate": 1792135264668,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "mem_pagefault_lat": [
@@ -45982,6 +45982,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261015-050002"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "committer": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "id": "53cc887a25bbba32e34ec2cd5e2564376e44e3d0",
+          "message": "Fix typo",
+          "timestamp": "2026-10-16T01:04:34Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/53cc887a25bbba32e34ec2cd5e2564376e44e3d0"
+        },
+        "date": 1792135264623,
+        "tool": "customSmallerIsBetter",
+        "title": "[UDP sockets] The latency of write+read (virtio-net, 4B message)",
+        "description": "lat_udp",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average UDP latency over virtio-net on Linux",
+            "value": "15.5013",
+            "unit": "µs",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average UDP latency over virtio-net on Asterinas",
+            "value": "13.6184",
+            "unit": "µs",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261016-050004"
       }
     ],
     "vfs_fcntl_lat": [
