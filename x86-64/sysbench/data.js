@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792135239193,
+  "lastUpdate": 1792135239692,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "cpu_lat": [
@@ -1142,6 +1142,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261015-050002"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "committer": {
+            "name": "gvipat",
+            "username": "gvipat",
+            "email": "gaurav.vipat@gmail.com"
+          },
+          "id": "53cc887a25bbba32e34ec2cd5e2564376e44e3d0",
+          "message": "Fix typo",
+          "timestamp": "2026-10-16T01:04:34Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/53cc887a25bbba32e34ec2cd5e2564376e44e3d0"
+        },
+        "date": 1792135239687,
+        "tool": "customSmallerIsBetter",
+        "title": "[CPU] CPU performance",
+        "description": "sysbench cpu",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average Execution Time per CPU on Linux",
+            "value": "7.13",
+            "unit": "ms",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average Execution Time per CPU on Asterinas",
+            "value": "7.15",
+            "unit": "ms",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261016-050004"
       }
     ],
     "thread_lat": [
