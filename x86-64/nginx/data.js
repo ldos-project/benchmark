@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792222099618,
+  "lastUpdate": 1792222100086,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "http_file4KB_bw": [
@@ -2436,6 +2436,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261016-050004"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Gaurav Vipat",
+            "username": "gvipat",
+            "email": "37859950+gvipat@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "e8a2fd2ef6a9f1836304bed626e829755e082f5a",
+          "message": "Add nightly benchmarking (#313)\n\nAdds scripts which use `nektos/act` to run\n`.github/workflows/benchmark_x86.yml` and push the `howdone` enriched\nresults to the [benchmark\ndashboard](https://github.com/ldos-project/benchmark).\n\n- The workflow is still runnable as an action but self hosted runner\nmust be configured and `UPLOAD_RESULTS` must be set so running it today\nwill do nothing.\n- Our fork of the [github benchmark\naction](https://github.com/ldos-project/github-action-benchmark.git) has\nbeen updated to `v1` and now optionally uploads the `howdone` tarball as\na release and links it on the dashboard.\n- A [custom landing page\n](https://github.com/ldos-project/github-action-benchmark.git) was added\nto mirror upstream.\n- The provenance and log upload is predicated on the `act` environment\nsince actions track these for free.\n- A `SAVE_LOGS` flag was added to\n`test/initramfs/src/benchmark/bench_linux_and_aster.sh` to facilitate\nlog capture.\n- `.howdone.yaml` was updated to capture\nact context and match the logs and results.\n- `tools/benchmarks/README.md` documents the runner setup process.\n- The redis benchmark summary was also updated to include YCSB.",
+          "timestamp": "2026-10-17T02:47:06Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/e8a2fd2ef6a9f1836304bed626e829755e082f5a"
+        },
+        "date": 1792222100079,
+        "tool": "customBiggerIsBetter",
+        "title": "Nginx HTTP request performance (virtio-net, 8KB file size)",
+        "description": "ab -n 10000 -c 1 http://10.0.2.15:8080/8192bytes.html",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average HTTP Bandwidth over virtio-net between Host Linux and Guest Linux",
+            "value": "10794.60",
+            "unit": "Requests per second",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average HTTP Bandwidth over virtio-net between Host Linux and Guest Asterinas",
+            "value": "8756.22",
+            "unit": "Requests per second",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261017-050002"
       }
     ],
     "http_file16KB_bw": [
