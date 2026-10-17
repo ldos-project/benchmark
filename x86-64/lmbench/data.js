@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792222123165,
+  "lastUpdate": 1792222123615,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "mem_pagefault_lat": [
@@ -1218,6 +1218,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261016-050004"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Gaurav Vipat",
+            "username": "gvipat",
+            "email": "37859950+gvipat@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "e8a2fd2ef6a9f1836304bed626e829755e082f5a",
+          "message": "Add nightly benchmarking (#313)\n\nAdds scripts which use `nektos/act` to run\n`.github/workflows/benchmark_x86.yml` and push the `howdone` enriched\nresults to the [benchmark\ndashboard](https://github.com/ldos-project/benchmark).\n\n- The workflow is still runnable as an action but self hosted runner\nmust be configured and `UPLOAD_RESULTS` must be set so running it today\nwill do nothing.\n- Our fork of the [github benchmark\naction](https://github.com/ldos-project/github-action-benchmark.git) has\nbeen updated to `v1` and now optionally uploads the `howdone` tarball as\na release and links it on the dashboard.\n- A [custom landing page\n](https://github.com/ldos-project/github-action-benchmark.git) was added\nto mirror upstream.\n- The provenance and log upload is predicated on the `act` environment\nsince actions track these for free.\n- A `SAVE_LOGS` flag was added to\n`test/initramfs/src/benchmark/bench_linux_and_aster.sh` to facilitate\nlog capture.\n- `.howdone.yaml` was updated to capture\nact context and match the logs and results.\n- `tools/benchmarks/README.md` documents the runner setup process.\n- The redis benchmark summary was also updated to include YCSB.",
+          "timestamp": "2026-10-17T02:47:06Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/e8a2fd2ef6a9f1836304bed626e829755e082f5a"
+        },
+        "date": 1792222123598,
+        "tool": "customSmallerIsBetter",
+        "title": "[Memory] The cost of page fault handling",
+        "description": "lat_pagefault",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average page fault latency on Linux",
+            "value": "0.0932",
+            "unit": "µs",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average page fault latency on Asterinas",
+            "value": "0.1375",
+            "unit": "µs",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261017-050002"
       }
     ],
     "mem_mmap_bw": [
