@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792481798654,
+  "lastUpdate": 1792481799169,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "ramfs_benchmarks_vacuum": [
@@ -24622,6 +24622,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261019-050002"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Yingqi Cao",
+            "username": "ioeddk",
+            "email": "78573313+ioeddk@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "7c7062aa7e7b96f92d2fda524a633a8164f58f7e",
+          "message": "Integrating IO Replayer Benchmark (#317)\n\nIntegrating the IO benchmark for block devices and RAID, pulled from its [source](https://github.com/utcs-scea/LAKE/tree/main/src/linnos/io_replayer/src) from the LAKE project.",
+          "timestamp": "2026-10-17T20:26:11Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/7c7062aa7e7b96f92d2fda524a633a8164f58f7e"
+        },
+        "date": 1792481799149,
+        "tool": "customSmallerIsBetter",
+        "title": "[Ext2] The refill-replace result of sqlite speedtest",
+        "description": "sqlite-speed-test: Refill two 50000-row tables using REPLACE",
+        "display": false,
+        "benches": [
+          {
+            "name": "The speed of refill-replace on Linux (Ext2)",
+            "value": "6.089",
+            "unit": "second",
+            "extra": "linux_result"
+          },
+          {
+            "name": "The speed of refill-replace on Asterinas (Ext2)",
+            "value": "8.626",
+            "unit": "second",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261020-050002"
       }
     ],
     "ext2_benchmarks_deletes_individual": [
