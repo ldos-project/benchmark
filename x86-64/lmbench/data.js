@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792481815339,
+  "lastUpdate": 1792481815868,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "mem_pagefault_lat": [
@@ -53128,6 +53128,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261019-050002"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Yingqi Cao",
+            "username": "ioeddk",
+            "email": "78573313+ioeddk@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "7c7062aa7e7b96f92d2fda524a633a8164f58f7e",
+          "message": "Integrating IO Replayer Benchmark (#317)\n\nIntegrating the IO benchmark for block devices and RAID, pulled from its [source](https://github.com/utcs-scea/LAKE/tree/main/src/linnos/io_replayer/src) from the LAKE project.",
+          "timestamp": "2026-10-17T20:26:11Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/7c7062aa7e7b96f92d2fda524a633a8164f58f7e"
+        },
+        "date": 1792481815822,
+        "tool": "customSmallerIsBetter",
+        "title": "[VFS] The cost of record locking/unlocking via fcntl",
+        "description": "lat_fcntl",
+        "display": false,
+        "benches": [
+          {
+            "name": "Average file locking latency on Linux",
+            "value": "1.5385",
+            "unit": "µs",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average file locking latency on Asterinas",
+            "value": "0.5641",
+            "unit": "µs",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261020-050002"
       }
     ],
     "tcp_loopback_connect_lat": [
