@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792741807612,
+  "lastUpdate": 1792741808491,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "mem_pagefault_lat": [
@@ -8714,6 +8714,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261022-050001"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Aneesh Durg",
+            "username": "aneeshdurg",
+            "email": "aneeshdurg17@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "2c74cb02bd0db3282de4ca3512c75cd3775e2f60",
+          "message": "Make the OQueue last_consumer lock IRQ-safe (#320)\n\nProducing to an OQueue takes `last_consumer` in `wake_after_produce`.\nSome OQueues are produced from IRQ context (e.g. `scheduler.events`\nWakeups published when a virtio-blk completion wakes a waiter), so a\ntask holding the preempt-only lock could be interrupted by a handler\nspinning on the same lock, deadlocking that CPU. Use `LocalIrqDisabled`,\nas `inner` does.\n\nA ktest checks that holding the lock disables local IRQs.\n\nCo-authored-by: Claude Opus 5.5 <noreply@anthropic.com>",
+          "timestamp": "2026-10-20T21:39:06Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/2c74cb02bd0db3282de4ca3512c75cd3775e2f60"
+        },
+        "date": 1792741808471,
+        "tool": "customSmallerIsBetter",
+        "title": "[Process] The cost of fork+exit",
+        "description": "lat_proc fork",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average Fork latency on Linux",
+            "value": "132.9625",
+            "unit": "µs",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average Fork latency on Asterinas",
+            "value": "196.3333",
+            "unit": "µs",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261023-050002"
       }
     ],
     "process_exec_lat": [
