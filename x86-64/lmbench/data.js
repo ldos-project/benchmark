@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792741791144,
+  "lastUpdate": 1792741791697,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "mem_pagefault_lat": [
@@ -33182,6 +33182,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261022-050001"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Aneesh Durg",
+            "username": "aneeshdurg",
+            "email": "aneeshdurg17@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "2c74cb02bd0db3282de4ca3512c75cd3775e2f60",
+          "message": "Make the OQueue last_consumer lock IRQ-safe (#320)\n\nProducing to an OQueue takes `last_consumer` in `wake_after_produce`.\nSome OQueues are produced from IRQ context (e.g. `scheduler.events`\nWakeups published when a virtio-blk completion wakes a waiter), so a\ntask holding the preempt-only lock could be interrupted by a handler\nspinning on the same lock, deadlocking that CPU. Use `LocalIrqDisabled`,\nas `inner` does.\n\nA ktest checks that holding the lock disables local IRQs.\n\nCo-authored-by: Claude Opus 5.5 <noreply@anthropic.com>",
+          "timestamp": "2026-10-20T21:39:06Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/2c74cb02bd0db3282de4ca3512c75cd3775e2f60"
+        },
+        "date": 1792741791678,
+        "tool": "customBiggerIsBetter",
+        "title": "[VFS] The bandwidth of file reads via page cache",
+        "description": "bw_file_rd",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average file read bandwidth on Linux",
+            "value": "9443.97",
+            "unit": "MB/s",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average file read bandwidth on Asterinas",
+            "value": "10270.32",
+            "unit": "MB/s",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261023-050002"
       }
     ],
     "vfs_select_lat": [
