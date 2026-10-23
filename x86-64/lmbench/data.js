@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792741795550,
+  "lastUpdate": 1792741796059,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "mem_pagefault_lat": [
@@ -56280,6 +56280,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261022-050001"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Aneesh Durg",
+            "username": "aneeshdurg",
+            "email": "aneeshdurg17@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "2c74cb02bd0db3282de4ca3512c75cd3775e2f60",
+          "message": "Make the OQueue last_consumer lock IRQ-safe (#320)\n\nProducing to an OQueue takes `last_consumer` in `wake_after_produce`.\nSome OQueues are produced from IRQ context (e.g. `scheduler.events`\nWakeups published when a virtio-blk completion wakes a waiter), so a\ntask holding the preempt-only lock could be interrupted by a handler\nspinning on the same lock, deadlocking that CPU. Use `LocalIrqDisabled`,\nas `inner` does.\n\nA ktest checks that holding the lock disables local IRQs.\n\nCo-authored-by: Claude Opus 5.5 <noreply@anthropic.com>",
+          "timestamp": "2026-10-20T21:39:06Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/2c74cb02bd0db3282de4ca3512c75cd3775e2f60"
+        },
+        "date": 1792741796038,
+        "tool": "customSmallerIsBetter",
+        "title": "[UDP sockets] The latency of write+read (virtio-net, 4B message)",
+        "description": "lat_udp",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average UDP latency over virtio-net on Linux",
+            "value": "15.6440",
+            "unit": "µs",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average UDP latency over virtio-net on Asterinas",
+            "value": "13.6868",
+            "unit": "µs",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261023-050002"
       }
     ],
     "vfs_fcntl_lat": [
