@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792827452573,
+  "lastUpdate": 1792827453098,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "mem_pagefault_lat": [
@@ -34056,6 +34056,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261023-050002"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Arthur Peters",
+            "username": "arthurp",
+            "email": "amp@cs.utexas.edu"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "d168f0b9c779cff21534133f127d737d37212b5d",
+          "message": " Fix trailing-whitespace check.  (#337)\n\nChange trailing whitespace check to check for resulting lines, not the\nexit code of xargs. When xargs produces multiple call it effectively\nperforms an \"and\" instead of an \"or\". Previously, the check would always\nsucceed if there were enough files to be split across multiple calls.",
+          "timestamp": "2026-10-23T20:51:08Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/d168f0b9c779cff21534133f127d737d37212b5d"
+        },
+        "date": 1792827453049,
+        "tool": "customBiggerIsBetter",
+        "title": "[VFS] The bandwidth of file reads via page cache",
+        "description": "bw_file_rd",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average file read bandwidth on Linux",
+            "value": "9437.17",
+            "unit": "MB/s",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average file read bandwidth on Asterinas",
+            "value": "10255.72",
+            "unit": "MB/s",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261024-050002"
       }
     ],
     "vfs_select_lat": [
