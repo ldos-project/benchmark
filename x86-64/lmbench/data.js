@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792827468122,
+  "lastUpdate": 1792827468663,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "mem_pagefault_lat": [
@@ -8942,6 +8942,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261023-050002"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Arthur Peters",
+            "username": "arthurp",
+            "email": "amp@cs.utexas.edu"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "d168f0b9c779cff21534133f127d737d37212b5d",
+          "message": " Fix trailing-whitespace check.  (#337)\n\nChange trailing whitespace check to check for resulting lines, not the\nexit code of xargs. When xargs produces multiple call it effectively\nperforms an \"and\" instead of an \"or\". Previously, the check would always\nsucceed if there were enough files to be split across multiple calls.",
+          "timestamp": "2026-10-23T20:51:08Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/d168f0b9c779cff21534133f127d737d37212b5d"
+        },
+        "date": 1792827468611,
+        "tool": "customSmallerIsBetter",
+        "title": "[Process] The cost of fork+exit",
+        "description": "lat_proc fork",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average Fork latency on Linux",
+            "value": "134.8500",
+            "unit": "µs",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average Fork latency on Asterinas",
+            "value": "194.2857",
+            "unit": "µs",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261024-050002"
       }
     ],
     "process_exec_lat": [
