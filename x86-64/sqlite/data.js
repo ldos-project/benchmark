@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793000234939,
+  "lastUpdate": 1793000235480,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "ramfs_benchmarks_vacuum": [
@@ -30324,6 +30324,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261025-050001"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Arthur Peters",
+            "username": "arthurp",
+            "email": "amp@cs.utexas.edu"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "d168f0b9c779cff21534133f127d737d37212b5d",
+          "message": " Fix trailing-whitespace check.  (#337)\n\nChange trailing whitespace check to check for resulting lines, not the\nexit code of xargs. When xargs produces multiple call it effectively\nperforms an \"and\" instead of an \"or\". Previously, the check would always\nsucceed if there were enough files to be split across multiple calls.",
+          "timestamp": "2026-10-23T20:51:08Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/d168f0b9c779cff21534133f127d737d37212b5d"
+        },
+        "date": 1793000235459,
+        "tool": "customSmallerIsBetter",
+        "title": "[Ext2] The deletes-individual result of sqlite speedtest",
+        "description": "sqlite-speed-test: 50000 DELETEs of individual rows",
+        "display": false,
+        "benches": [
+          {
+            "name": "The speed of deletes-individual on Linux (Ext2)",
+            "value": "4.069",
+            "unit": "second",
+            "extra": "linux_result"
+          },
+          {
+            "name": "The speed of deletes-individual on Asterinas (Ext2)",
+            "value": "5.878",
+            "unit": "second",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261026-050002"
       }
     ],
     "ext2_benchmarks_deletes_between": [
