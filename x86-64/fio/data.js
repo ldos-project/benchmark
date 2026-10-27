@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793086933418,
+  "lastUpdate": 1793086933884,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "ext2_seq_write_bw": [
@@ -3158,6 +3158,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261026-050002"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Arthur Peters",
+            "username": "arthurp",
+            "email": "amp@cs.utexas.edu"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "d168f0b9c779cff21534133f127d737d37212b5d",
+          "message": " Fix trailing-whitespace check.  (#337)\n\nChange trailing whitespace check to check for resulting lines, not the\nexit code of xargs. When xargs produces multiple call it effectively\nperforms an \"and\" instead of an \"or\". Previously, the check would always\nsucceed if there were enough files to be split across multiple calls.",
+          "timestamp": "2026-10-23T20:51:08Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/d168f0b9c779cff21534133f127d737d37212b5d"
+        },
+        "date": 1793086933877,
+        "tool": "customBiggerIsBetter",
+        "title": "[Ext2] The bandwidth of sequential reads",
+        "description": "fio -filename=/ext2/fio-test -size=1G -bs=1M -direct=1",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average file read bandwidth on Linux",
+            "value": "3567",
+            "unit": "MB/s",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average file read bandwidth on Asterinas",
+            "value": "4281",
+            "unit": "MB/s",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261027-050001"
       }
     ],
     "ext2_seq_write_bw_no_iommu": [
