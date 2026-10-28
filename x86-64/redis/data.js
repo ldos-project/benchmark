@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793086901556,
+  "lastUpdate": 1793174603257,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "ping_inline_100k_conc20_rps": [
@@ -8066,6 +8066,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261027-050001"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Aneesh Durg",
+            "username": "aneeshdurg",
+            "email": "aneeshdurg17@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "e1e3cb7c968c56e2578c5bf63dbc728a104ec932",
+          "message": "Support DefaultProjection on trivially projectable types (#335)\n\nPreviously, the default implementation precluded many types from being\nautomatically `DefaultProjectable` as they did not satisfy the trait\nbounds. But because the trait bound use a trait outside of this crate,\nrust could not ensure that those crates would never add impls for types\nalso defined outside of our crate in the future. This would make\nderiving `DefaultProjection` rarely possible.\n\nTo avoid that, we introduce a new trait which we do control, at the cost\nof having to add a `Projectable` tag explicitly on every type we use.\nThis is cumbersome, but easy - unblocking other users of\ndefaultprojection.",
+          "timestamp": "2026-10-27T18:20:33Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/e1e3cb7c968c56e2578c5bf63dbc728a104ec932"
+        },
+        "date": 1793174603249,
+        "tool": "customBiggerIsBetter",
+        "title": "YCSB Redis throughput under allocator stress (virtio-net, 16 threads, 4096-byte fields)",
+        "description": "ycsb run redis -p redis.host=<guest_ip> -p redis.port=6379 -P ./workloads/workloada -p operationcount=4096 -p recordcount=4096 -p workload=site.ycsb.workloads.CoreWorkload -p readproportion=0.05 -p updateproportion=0.00 -p scanproportion=0.00 -p insertproportion=0.00 -p readmodifywriteproportion=0.00 -p deleteproportion=0.95 -p threadcount=16 -p fieldcount=1 -p fieldlength=4096 -p minfieldlength=4096 -p fieldlengthdistribution=uniform (run 4096 times; result taken from final iteration)",
+        "display": true,
+        "benches": [
+          {
+            "name": "Throughput (ops/sec) of YCSB Redis (delete-heavy, 4096-byte fields) on Guest Linux",
+            "value": "8376.278118609407",
+            "unit": "operations per second",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Throughput (ops/sec) of YCSB Redis (delete-heavy, 4096-byte fields) on Guest Asterinas",
+            "value": "3382.3286540049544",
+            "unit": "operations per second",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261028-050002"
       }
     ]
   }
