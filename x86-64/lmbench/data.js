@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793174624197,
+  "lastUpdate": 1793174625210,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "mem_pagefault_lat": [
@@ -14686,6 +14686,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261027-050001"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Aneesh Durg",
+            "username": "aneeshdurg",
+            "email": "aneeshdurg17@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "e1e3cb7c968c56e2578c5bf63dbc728a104ec932",
+          "message": "Support DefaultProjection on trivially projectable types (#335)\n\nPreviously, the default implementation precluded many types from being\nautomatically `DefaultProjectable` as they did not satisfy the trait\nbounds. But because the trait bound use a trait outside of this crate,\nrust could not ensure that those crates would never add impls for types\nalso defined outside of our crate in the future. This would make\nderiving `DefaultProjection` rarely possible.\n\nTo avoid that, we introduce a new trait which we do control, at the cost\nof having to add a `Projectable` tag explicitly on every type we use.\nThis is cumbersome, but easy - unblocking other users of\ndefaultprojection.",
+          "timestamp": "2026-10-27T18:20:33Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/e1e3cb7c968c56e2578c5bf63dbc728a104ec932"
+        },
+        "date": 1793174625157,
+        "tool": "customSmallerIsBetter",
+        "title": "[Signals] The cost of installing a signal handler",
+        "description": "lat_sig install",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average Signal handler install latency on Linux",
+            "value": "0.0991",
+            "unit": "µs",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average Signal handler install latency on Asterinas",
+            "value": "0.1690",
+            "unit": "µs",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261028-050002"
       }
     ],
     "signal_catch_lat": [
