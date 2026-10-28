@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793086904835,
+  "lastUpdate": 1793174605845,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "http_file4KB_bw": [
@@ -9816,6 +9816,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261027-050001"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Aneesh Durg",
+            "username": "aneeshdurg",
+            "email": "aneeshdurg17@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "e1e3cb7c968c56e2578c5bf63dbc728a104ec932",
+          "message": "Support DefaultProjection on trivially projectable types (#335)\n\nPreviously, the default implementation precluded many types from being\nautomatically `DefaultProjectable` as they did not satisfy the trait\nbounds. But because the trait bound use a trait outside of this crate,\nrust could not ensure that those crates would never add impls for types\nalso defined outside of our crate in the future. This would make\nderiving `DefaultProjection` rarely possible.\n\nTo avoid that, we introduce a new trait which we do control, at the cost\nof having to add a `Projectable` tag explicitly on every type we use.\nThis is cumbersome, but easy - unblocking other users of\ndefaultprojection.",
+          "timestamp": "2026-10-27T18:20:33Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/e1e3cb7c968c56e2578c5bf63dbc728a104ec932"
+        },
+        "date": 1793174605842,
+        "tool": "customBiggerIsBetter",
+        "title": "Nginx HTTP request performance with 20 concurrency and 10000 requests in total",
+        "description": "ab -n 10000 -c 20 http://localhost:8080/index.html",
+        "display": false,
+        "benches": [
+          {
+            "name": "Average HTTP Bandwidth over virtio-net between Host Linux and Guest Linux",
+            "value": "12633.71",
+            "unit": "Kbytes/sec",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average HTTP Bandwidth over virtio-net between Host Linux and Guest Asterinas",
+            "value": "4955.77",
+            "unit": "Kbytes/sec",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261028-050002"
       }
     ],
     "http_req10k_conc1_bw": [
