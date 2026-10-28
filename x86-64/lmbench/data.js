@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793174617296,
+  "lastUpdate": 1793174617821,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "mem_pagefault_lat": [
@@ -61978,6 +61978,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261027-050001"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Aneesh Durg",
+            "username": "aneeshdurg",
+            "email": "aneeshdurg17@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "e1e3cb7c968c56e2578c5bf63dbc728a104ec932",
+          "message": "Support DefaultProjection on trivially projectable types (#335)\n\nPreviously, the default implementation precluded many types from being\nautomatically `DefaultProjectable` as they did not satisfy the trait\nbounds. But because the trait bound use a trait outside of this crate,\nrust could not ensure that those crates would never add impls for types\nalso defined outside of our crate in the future. This would make\nderiving `DefaultProjection` rarely possible.\n\nTo avoid that, we introduce a new trait which we do control, at the cost\nof having to add a `Projectable` tag explicitly on every type we use.\nThis is cumbersome, but easy - unblocking other users of\ndefaultprojection.",
+          "timestamp": "2026-10-27T18:20:33Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/e1e3cb7c968c56e2578c5bf63dbc728a104ec932"
+        },
+        "date": 1793174617770,
+        "tool": "customSmallerIsBetter",
+        "title": "[TCP sockets] The latency of write+read (virtio-net, 1B message)",
+        "description": "lat_tcp_virtio",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average TCP latency over virtio-net on Linux",
+            "value": "18.2447",
+            "unit": "µs",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average TCP latency over virtio-net on Asterinas",
+            "value": "15.8749",
+            "unit": "µs",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261028-050002"
       }
     ],
     "udp_virtio_lat": [
