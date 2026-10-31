@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793174605310,
+  "lastUpdate": 1793433578796,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "ping_inline_100k_conc20_rps": [
@@ -8256,6 +8256,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261028-050002"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Yingqi Cao",
+            "username": "ioeddk",
+            "email": "78573313+ioeddk@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "4174f145f502d38210896d9d20cb80b8bb402cb8",
+          "message": "Select kernel policies from a TOML policy config (#344)\n\nAdd a config file to choose policies used in the kernel.",
+          "timestamp": "2026-10-29T21:21:11Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/4174f145f502d38210896d9d20cb80b8bb402cb8"
+        },
+        "date": 1793433578787,
+        "tool": "customBiggerIsBetter",
+        "title": "YCSB Redis throughput under allocator stress (virtio-net, 16 threads, 4096-byte fields)",
+        "description": "ycsb run redis -p redis.host=<guest_ip> -p redis.port=6379 -P ./workloads/workloada -p operationcount=4096 -p recordcount=4096 -p workload=site.ycsb.workloads.CoreWorkload -p readproportion=0.05 -p updateproportion=0.00 -p scanproportion=0.00 -p insertproportion=0.00 -p readmodifywriteproportion=0.00 -p deleteproportion=0.95 -p threadcount=16 -p fieldcount=1 -p fieldlength=4096 -p minfieldlength=4096 -p fieldlengthdistribution=uniform (run 4096 times; result taken from final iteration)",
+        "display": true,
+        "benches": [
+          {
+            "name": "Throughput (ops/sec) of YCSB Redis (delete-heavy, 4096-byte fields) on Guest Linux",
+            "value": "8291.497975708502",
+            "unit": "operations per second",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Throughput (ops/sec) of YCSB Redis (delete-heavy, 4096-byte fields) on Guest Asterinas",
+            "value": "3058.9992531740104",
+            "unit": "operations per second",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261031-050437"
       }
     ]
   }
