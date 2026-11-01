@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793519982073,
+  "lastUpdate": 1793519982599,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "mem_pagefault_lat": [
@@ -25642,6 +25642,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261031-050437"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Yingqi Cao",
+            "username": "ioeddk",
+            "email": "78573313+ioeddk@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "4174f145f502d38210896d9d20cb80b8bb402cb8",
+          "message": "Select kernel policies from a TOML policy config (#344)\n\nAdd a config file to choose policies used in the kernel.",
+          "timestamp": "2026-10-29T21:21:11Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/4174f145f502d38210896d9d20cb80b8bb402cb8"
+        },
+        "date": 1793519982575,
+        "tool": "customSmallerIsBetter",
+        "title": "[Unix sockets] The latency of write+read (1B message)",
+        "description": "lat_unix",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average unix latency on Linux",
+            "value": "2.7413",
+            "unit": "µs",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average unix latency on Asterinas",
+            "value": "3.0078",
+            "unit": "µs",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261101-050002"
       }
     ],
     "unix_bw": [
