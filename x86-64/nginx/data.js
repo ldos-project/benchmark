@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793433583724,
+  "lastUpdate": 1793519974409,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "http_file4KB_bw": [
@@ -10272,6 +10272,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261031-050437"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Yingqi Cao",
+            "username": "ioeddk",
+            "email": "78573313+ioeddk@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "4174f145f502d38210896d9d20cb80b8bb402cb8",
+          "message": "Select kernel policies from a TOML policy config (#344)\n\nAdd a config file to choose policies used in the kernel.",
+          "timestamp": "2026-10-29T21:21:11Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/4174f145f502d38210896d9d20cb80b8bb402cb8"
+        },
+        "date": 1793519974399,
+        "tool": "customBiggerIsBetter",
+        "title": "Nginx HTTP request performance with 20 concurrency and 10000 requests in total",
+        "description": "ab -n 10000 -c 20 http://localhost:8080/index.html",
+        "display": false,
+        "benches": [
+          {
+            "name": "Average HTTP Bandwidth over virtio-net between Host Linux and Guest Linux",
+            "value": "13360.45",
+            "unit": "Kbytes/sec",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average HTTP Bandwidth over virtio-net between Host Linux and Guest Asterinas",
+            "value": "4861.29",
+            "unit": "Kbytes/sec",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261101-050002"
       }
     ],
     "http_req10k_conc1_bw": [
