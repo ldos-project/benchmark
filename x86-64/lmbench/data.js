@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793520000948,
+  "lastUpdate": 1793520001604,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "mem_pagefault_lat": [
@@ -3462,6 +3462,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261031-050437"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Yingqi Cao",
+            "username": "ioeddk",
+            "email": "78573313+ioeddk@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "4174f145f502d38210896d9d20cb80b8bb402cb8",
+          "message": "Select kernel policies from a TOML policy config (#344)\n\nAdd a config file to choose policies used in the kernel.",
+          "timestamp": "2026-10-29T21:21:11Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/4174f145f502d38210896d9d20cb80b8bb402cb8"
+        },
+        "date": 1793520001551,
+        "tool": "customBiggerIsBetter",
+        "title": "[Memory] The bandwidth of mmap",
+        "description": "bw_mmap",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average mmap bandwidth on Linux",
+            "value": "14728.97",
+            "unit": "MB/s",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average mmap bandwidth on Asterinas",
+            "value": "14897.36",
+            "unit": "MB/s",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261101-050002"
       }
     ],
     "mem_mmap_lat": [
