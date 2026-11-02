@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793604578063,
+  "lastUpdate": 1793604578642,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "mem_pagefault_lat": [
@@ -83238,6 +83238,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261101-050002"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Yingqi Cao",
+            "username": "ioeddk",
+            "email": "78573313+ioeddk@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "4174f145f502d38210896d9d20cb80b8bb402cb8",
+          "message": "Select kernel policies from a TOML policy config (#344)\n\nAdd a config file to choose policies used in the kernel.",
+          "timestamp": "2026-10-29T21:21:11Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/4174f145f502d38210896d9d20cb80b8bb402cb8"
+        },
+        "date": 1793604578589,
+        "tool": "customBiggerIsBetter",
+        "title": "[Ext2] The throughput of creating/deleting small files (0KB)",
+        "description": "lat_fs -s 0k /ext2",
+        "display": false,
+        "benches": [
+          {
+            "name": "Number of created/deleted files on Linux",
+            "value": "111",
+            "unit": "number",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Number of created/deleted files on Asterinas",
+            "value": "344",
+            "unit": "number",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261102-050001"
       }
     ]
   }
