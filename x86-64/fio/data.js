@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793691607485,
+  "lastUpdate": 1793777481037,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "ext2_seq_write_bw": [
@@ -5402,6 +5402,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261103-050003"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Aneesh Durg",
+            "username": "aneeshdurg",
+            "email": "aneeshdurg17@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "3603b45bfdc6534da5fb5f06f1f42bab6af46f74",
+          "message": "Walk the robust list as Linux does at thread exit (#322)\n\nA `robust list` tracks the set of \"robust\" futexes - that is futexes\nthat can be acquired multiple times by the holder of the futex. When a\nthread dies, it's list of robust futexes must be relinquished to wake\nother potential waiters.\n\nAsterinas previously modeled the robust list as an in-kernel data\nstructure copied from userspace on `set_robust_list`, differing from\nlinux which allows the userspace process to register a pointer to the\nstarting of the list in it's address space, and then edit the list from\nuserspace without requiring another transition to the kernel.\n\nAdditionally, in linux the first bit of the futex addresses in the list\nsignifies whether the futex should support priority inheritance or not.\n\nThis interface cannot be easily changed as processes built against\nexiting libraries in linux expect this convention.\n\n---------\n\nCo-authored-by: Claude Opus 5.5 <noreply@anthropic.com>",
+          "timestamp": "2026-11-03T03:25:40Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/3603b45bfdc6534da5fb5f06f1f42bab6af46f74"
+        },
+        "date": 1793777481029,
+        "tool": "customBiggerIsBetter",
+        "title": "[Ext2] The bandwidth of sequential writes (IOMMU disabled on Asterinas)",
+        "description": "fio -filename=/ext2/fio-test -size=1G -bs=1M -direct=1",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average file write bandwidth on Linux",
+            "value": "2552",
+            "unit": "MB/s",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average file write bandwidth on Asterinas",
+            "value": "1295",
+            "unit": "MB/s",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261104-050002"
       }
     ],
     "ext2_seq_read_bw_no_iommu": [
