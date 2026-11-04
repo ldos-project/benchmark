@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793691576545,
+  "lastUpdate": 1793777450857,
   "repoUrl": "https://github.com/ldos-project/asterinas",
   "entries": {
     "t8_conc32_window10k": [
@@ -3652,6 +3652,44 @@ window.BENCHMARK_DATA = {
           }
         ],
         "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261103-050003"
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Aneesh Durg",
+            "username": "aneeshdurg",
+            "email": "aneeshdurg17@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "3603b45bfdc6534da5fb5f06f1f42bab6af46f74",
+          "message": "Walk the robust list as Linux does at thread exit (#322)\n\nA `robust list` tracks the set of \"robust\" futexes - that is futexes\nthat can be acquired multiple times by the holder of the futex. When a\nthread dies, it's list of robust futexes must be relinquished to wake\nother potential waiters.\n\nAsterinas previously modeled the robust list as an in-kernel data\nstructure copied from userspace on `set_robust_list`, differing from\nlinux which allows the userspace process to register a pointer to the\nstarting of the list in it's address space, and then edit the list from\nuserspace without requiring another transition to the kernel.\n\nAdditionally, in linux the first bit of the futex addresses in the list\nsignifies whether the futex should support priority inheritance or not.\n\nThis interface cannot be easily changed as processes built against\nexiting libraries in linux expect this convention.\n\n---------\n\nCo-authored-by: Claude Opus 5.5 <noreply@anthropic.com>",
+          "timestamp": "2026-11-03T03:25:40Z",
+          "url": "https://github.com/ldos-project/asterinas/commit/3603b45bfdc6534da5fb5f06f1f42bab6af46f74"
+        },
+        "date": 1793777450849,
+        "tool": "customBiggerIsBetter",
+        "title": "Memaslap 10% SET and 90% GET throughput (virtio-net, 8 client threads, 32 concurrency, 20k window)",
+        "description": "memaslap -t 30s -T 8 -c 32 -w 20k -S 1s",
+        "display": true,
+        "benches": [
+          {
+            "name": "Average OPS of SET and GET over virtio-net between Host Linux and Guest Linux",
+            "value": "2041210",
+            "unit": "operations per second",
+            "extra": "linux_result"
+          },
+          {
+            "name": "Average OPS of SET and GET over virtio-net between Host Linux and Guest Asterinas",
+            "value": "2753359",
+            "unit": "operations per second",
+            "extra": "aster_result"
+          }
+        ],
+        "releaseUrl": "https://github.com/ldos-project/benchmark/releases/tag/run-20261104-050002"
       }
     ],
     "t16_conc64_window10k": [
